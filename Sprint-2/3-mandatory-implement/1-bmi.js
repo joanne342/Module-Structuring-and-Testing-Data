@@ -1,36 +1,23 @@
-// In Sprint-1, there is a program written in interpret/to-pounds.js
+// Below are the steps for how BMI is calculated
 
-// You will need to take this code and turn it into a reusable block of code.
-// You will need to declare a function called toPounds with an appropriately named parameter.
+// The BMI calculation divides an adult's weight in kilograms (kg) by their height in metres (m) squared.
 
-// You should call this function a number of times to check it works for different inputs
+// For example, if you weigh 70kg (around 11 stone) and are 1.73m (around 5 feet 8 inches) tall, you work out your BMI by:
 
-function calculateBMI(penceString) {  
+// squaring your height: 1.73 x 1.73 = 2.99
+// dividing 70 by 2.99 = 23.41
+// Your result will be displayed to 1 decimal place, for example 23.4.
 
-  // remove last character
-  const penceStringWithoutTrailingP = penceString.substring(
-    0,
-    penceString.length - 1
-  );
+// You will need to implement a function that calculates the BMI of someone based off their weight and height
 
-  // pad to the length of three
-  const paddedPenceNumberString = penceStringWithoutTrailingP.padStart(3, "0");
+// Given someone's weight in kg and height in metres
+// Then when we call this function with the weight and height
+// It should return their Body Mass Index to 1 decimal place
 
-  // remove the last two characters
-  const pounds = paddedPenceNumberString.substring(
-    0,
-    paddedPenceNumberString.length - 2
-  );
-
-  // get last two characters and pad to two if needed
-  const pence = paddedPenceNumberString
-    .substring(paddedPenceNumberString.length - 2)
-    .padEnd(2, "0");
-
-  console.log(`£${pounds}.${pence}`);
-  
+function calculateBMI(weight, height) {
+    // return the BMI of someone based off their weight and height
+    return (weight/(height**2)).toFixed(1)
 }
 
-console.log(calculateBMI("456p"))
-console.log(calculateBMI("545747p"))
-console.log(calculateBMI("1p"))
+console.log (calculateBMI(70, 1.73));
+}
