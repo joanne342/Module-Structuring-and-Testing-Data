@@ -4,9 +4,6 @@ function repeatStr(str, count) {
 if (count < 0) {
     throw new Error("Negative count is not allowed");
 
-  } else if (count === 0) {
-    return "";
-
   } else {
     return Array.from({ length: count }, () => str).join("");
   }
