@@ -4,8 +4,11 @@ function repeatStr() {
   if (count === 1) {
     return str;
 
-  } else if (count < 1) {
+  } else if (count < 0) {
     throw new Error("Something went wrong");
+
+  } else if (count === 0) {
+    return "";
 
   } else {
     return Array.from({ length: count }, () => str).join("");
